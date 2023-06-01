@@ -16,7 +16,7 @@ class RoundsController < ApplicationController
     end
 
     def create
-        @round = Round.create(params.require(:round).permit(:date, :number_of_holes, :score, :guest_name, :guest_score, :course_id))
+        @round = Round.create(params.require(:round).permit(:date, :number_of_holes, :score, :guest_name, :guest_score, :course_id, :user_id))
         if @round.save
             render json: {status: 'SUCCESS', message: 'Round is saved', data:@round}, status: :ok
           else
@@ -33,7 +33,7 @@ class RoundsController < ApplicationController
     def update
         @round = Round.find(params[:id])
         
-        if @round.update(params.require(:round).permit(:date, :number_of_holes, :score, :guest_name, :guest_score, :course_id))
+        if @round.update(params.require(:round).permit(:date, :number_of_holes, :score, :guest_name, :guest_score, :course_id, :user_id))
             render json: {status: 'SUCCESS', message: 'Round is updated', data:@round}, status: :ok
           else
             render json: {status: 'Error', message: 'Round is not updated', data:@round.errors}, status: :unprocessable_entity
