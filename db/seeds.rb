@@ -8,3 +8,7 @@
 
 # Course.create(name: "Duke Meadows", par_score: 27)
 # Course.create(name: "The Berkshire", par_score: 72)
+
+# Round.create(course_id: 1, date: "26/11/1994", number_of_holes: 9, score: 52, guest_name: "Bod", guest_score: 27)
+# Round.create(course_id: 1, date: "26/11/1994", number_of_holes: 9, score: 34, guest_name: "Rutland", guest_score: 100)
+# Round.create(course_id: 2, date: "26/11/1994", number_of_holes: 18, score: 80, guest_name: "Bibby", guest_score: 72)

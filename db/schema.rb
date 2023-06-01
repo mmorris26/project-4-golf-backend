@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_01_093643) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_01_094653) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,6 +19,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_01_093643) do
     t.integer "par_score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "rounds", force: :cascade do |t|
+    t.string "date"
+    t.integer "number_of_holes"
+    t.integer "score"
+    t.string "guest_name"
+    t.integer "guest_score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "course_id"
+    t.index ["course_id"], name: "index_rounds_on_course_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,4 +49,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_01_093643) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "rounds", "courses"
 end

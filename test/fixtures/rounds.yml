@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: MyString
+  number_of_holes: 1
+  score: 1
+  guest_name: MyString
+  guest_score: 1
+
+two:
+  date: MyString
+  number_of_holes: 1
+  score: 1
+  guest_name: MyString
+  guest_score: 1
