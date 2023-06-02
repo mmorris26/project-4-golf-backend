@@ -41,5 +41,10 @@ class CoursesController < ApplicationController
        
     end
 
+    def current
+        @course = Course.last
+        render json: @course
+    end
+
 end
 

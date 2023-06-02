@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     }
   end
 
+  get 'courses/current', to: "courses#current"
+
   resources :courses
   resources :rounds
 
