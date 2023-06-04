@@ -19,7 +19,9 @@ Rails.application.routes.draw do
     }
   end
 
-  get 'courses/current', to: "courses#current"
+  get 'courses/current_course', to: "courses#current_course"
+
+  get 'rounds/current_round', to: "rounds#current_round"
 
   resources :courses
   resources :rounds

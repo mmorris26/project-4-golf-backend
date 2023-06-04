@@ -48,6 +48,11 @@ class RoundsController < ApplicationController
 
     end
 
+    def current_round
+        @round = Round.last
+        render json: @round
+    end
+
 
 
 end
