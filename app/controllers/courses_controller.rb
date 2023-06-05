@@ -46,5 +46,11 @@ class CoursesController < ApplicationController
         render json: @course
     end
 
+    def course_rounds
+        @course_rounds = Course.includes(:rounds)
+       
+        render json: @course_rounds.to_json(include: :rounds)
+    end
+
 end
 

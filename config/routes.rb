@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   get 'rounds/current_round', to: "rounds#current_round"
 
+  get 'courses/rounds', to: "courses#course_rounds"
+
   resources :courses
   resources :rounds
 
