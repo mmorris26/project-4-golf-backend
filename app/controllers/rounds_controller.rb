@@ -1,5 +1,7 @@
 class RoundsController < ApplicationController
 
+    before_action :authenticate_user!
+
     def index
         @round = Round.all  
         render json: {status: 'SUCCESS', message: 'Loaded rounds', data:@round}, status: :ok
@@ -52,6 +54,8 @@ class RoundsController < ApplicationController
         @round = Round.last
         render json: @round
     end
+
+    
 
 
 
