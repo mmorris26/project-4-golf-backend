@@ -55,6 +55,11 @@ class RoundsController < ApplicationController
         render json: @round
     end
 
+    def round_scores
+        @round = Round.all  
+        @scores = @round.score
+        render json: {status: 'SUCCESS', message: 'Loaded rounds', data:@round}, status: :ok
+    end
     
 
 
